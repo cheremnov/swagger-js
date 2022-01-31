@@ -79,7 +79,7 @@ export default {
     // keep it instead of merging with examples from subschemas
     if (originalDefinitionObj.example) {
       // Delete subschemas examples
-      patches.push(specmap.remove([].concat(parent, 'example')));
+      patches.push(specmap.replace([].concat(parent, 'example'), undefined));
     }
     // Merge back the values from the original definition
     patches.push(specmap.mergeDeep(parent, originalDefinitionObj));
